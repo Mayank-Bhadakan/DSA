@@ -7,22 +7,18 @@ public class palindromic {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter number: ");
-        int n = sc.nextInt();
+        int n = sc.nextInt(); // 123
         int duplicate = n;
+        int rev = 0;
 
-        int length = String.valueOf(n).length();
-        String reverse = "";
-
-        for(int i=0; i<length; i++){
-            reverse = reverse + String.valueOf(n%10);
-            n = n/10;
+        while ( n > 0 ){
+            int digit = n % 10;
+            rev = (rev * 10) + digit;
+            n = n / 10;
         }
-
-        int value = Integer.parseInt(reverse);
-        System.out.println(value);
-
-        if(duplicate == value) System.out.println("Palindromic");
-        else System.out.println("Not a Palindromic");
+        if( rev == duplicate) {
+            System.out.println("The number is palindromic");
+        }else System.out.println("The number is not palindromic");
 
     }
 }

@@ -8,13 +8,13 @@ public class sumDigits {
 
         System.out.print("Enter a number: ");
         int n = sc.nextInt();
-        int length = String.valueOf(n).length();
-
         int sum = 0;
 
-        for(int i=0; i<length; i++){
-            sum = sum + (n%10); // get last one digit
+        while ( n > 0 ){
+            sum = sum + (n % 10);
+            n = n/10;
         }
         System.out.println(sum);
+
     }
 }
